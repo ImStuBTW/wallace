@@ -1,0 +1,547 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{block:TagPage}{Tag} | {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+
+    {block:Hidden}
+    <meta name="font:Title" content="Brutal Type"/>
+    <meta name="font:Body" content="Sofia Pro"/>
+    <meta name="color:Masthead text and links" content="{TitleColor}"/>
+    <meta name="color:Body text" content="#313131"/>
+    <meta name="image:Background" content=""/>
+    {/block:Hidden}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Option 1) Bootstrap CDN
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <style>
+      /* Theme CSS */
+      /* Comment out if using Sass stylesheet. */
+
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        margin-top: 30px; /* Make room for Tumblr Follow Button */
+        margin-bottom: 40px; /* Sticky FooterFooter */
+      }
+
+      /* Responsive Images */
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      .photoset-img {
+        max-width: 100%;
+      }
+
+      /* Sticky Footer Stylings. */
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .footer .container .text-muted {
+        margin: 10px 0;
+      }
+
+      /* Masthead Link Button Styling */
+
+      .masthead-links > a.btn.btn-default {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      /* Post Footer Stylings */
+
+      .timestamp-reblog {
+        height: 22px;
+      }
+
+      hr {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+      }
+
+      ul.tags.list-inline {
+        margin-bottom: 0px;
+      }
+
+
+      /* Remove margin above posts . */
+
+      article h2 {
+        margin-top: 0px;
+      }
+
+      .post-content .title {
+        margin-top: 0;
+      }
+
+      /* Chat Post Stylings. */
+      .type-chat .chat-lines {
+        margin: 0;
+        list-style-type: none;
+      }
+      .type-chat .chat-lines li {
+        margin: 1em 0;
+      }
+      .type-chat .chat-lines .label {
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        width: 100%;
+        display: inline-block;
+        padding: 0px;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgb(49, 49, 49);
+        text-align: left;
+
+      }
+
+      /* Note Stylings. */
+      ol.notes {
+          padding: 0px;
+          margin: 25px 0px;
+          list-style-type: none;
+          //border-bottom: solid 1px #ccc;
+      }
+
+      ol.notes li.note {
+          //border-top: solid 1px #ccc;
+          padding: 10px;
+      }
+
+      ol.notes li.note img.avatar {
+          vertical-align: -4px;
+          margin-right: 10px;
+          width: 16px;
+          height: 16px;
+          @extend .pull-left;
+      }
+
+      ol.notes li.note span.action {
+          //font-weight: bold;
+      }
+
+      ol.notes li.note .answer_content {
+          font-weight: normal;
+      }
+
+      ol.notes li.note blockquote {
+          //border-color: #eee;
+          padding: 4px 10px;
+          margin: 10px 0px 0px 25px;
+      }
+
+      ol.notes li.note blockquote a {
+          text-decoration: none;
+      }
+    </style>
+    ./Option 1 -->
+
+    <!-- Option 2) Manually uploaded Bootstrap Sass -->
+    <link rel="stylesheet" href="[REPLACE WITH TUMBLR UPLOADED CSS FILE]" crossorigin="anonymous">
+    <!-- ./Option 2 -->
+
+      <style>
+      /* Tumblr: Custom CSS Meta Variables */
+      {CustomCSS}
+
+  	  /* Tumblr: Customizable elements */
+      body {
+        font-family: {font:Body};
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: {font:Title};
+      }
+
+      body {
+        color: {color:Body text};
+      }
+      .masthead {
+        color: {color:Masthead text and links};
+      }
+      .masthead a {
+        color: {color:Masthead text and links};
+      }
+
+      body {
+        background-image: url('{image:Background}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      body {
+        background-color: {BackgroundColor};
+      }
+      .blog-title a {
+        font-weight: {TitleFontWeight};
+      }
+  	  a {
+        color: {AccentColor};
+      }
+      .pagination>li>a {
+        color: {AccentColor};
+      }
+      .pagination>li>span {
+        color: {AccentColor};
+      }
+      .portrait.global-shape-circle {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body class="{block:IndexPage}is-index-page{/block:IndexPage} {block:PermalinkPage}is-permalink-page{/block:PermalinkPage}">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-push-8"> <!-- Push used to keep column on the right, but stacked on top when mobile. -->
+        <header class="masthead panel panel-default" role="banner"> <!-- Masthead contains blog info and avatar. -->
+          <div class="panel-body">
+            <div class="meta-wrapper">
+              {block:ShowAvatar}
+                <a href="/" title="{lang:Home}">
+                  <img class="portrait global-shape-{AvatarShape} center-block" src="{PortraitURL-128}"/>
+                </a>
+              {/block:ShowAvatar}
+
+              <div class="blog-details">
+                {block:ShowTitle}
+                  <h1 class="blog-title text-center">
+                    <a href="/" title="{lang:Home}">{Title}</a>
+                  </h1>
+                {/block:ShowTitle}
+
+                {block:ShowDescription}
+                  {block:Description}
+                    <p class="blog-description">{Description}</p>
+                  {block:Description}
+                {/block:ShowDescription}
+              </div>
+            </div>
+
+            <form action="/search" method="get">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input type="text" name="q" class="form-control" value="{SearchQuery}" placeholder="{lang:Search}"/>
+              </div>
+            </form>
+
+            <div class="masthead-links nav-wrapper">
+                {block:AskEnabled}
+                  <a class="btn btn-default" href="/ask">{AskLabel}</a>
+                {/block:AskEnabled}
+
+                {block:SubmissionsEnabled}
+                  <a class="btn btn-default" href="/submit">{SubmitLabel}</a>
+                {/block:SubmissionsEnabled}
+
+                {block:HasPages}
+                  {block:Pages}
+                  <a class="btn btn-default" href="{URL}">{Label}</a>
+                  {/block:Pages}
+                {/block:HasPages}
+              </nav>
+            </div>
+
+          </div> <!-- ./panel-body -->
+        </header>
+      </div> <!-- ./col-md-4 -->
+      <div class="col-md-8 col-md-pull-4">
+          <!-- Search results -->
+          {block:SearchPage}
+            <div class="search-page message">
+              {block:SearchResults}
+                <p class="search-result">{lang:Search results for SearchQuery 2}</p>
+              {/block:SearchResults}
+
+              {block:NoSearchResults}
+                <p class="search-result">{lang:Sorry no results for SearchQuery 2}</p>
+              {/block:NoSearchResults}
+
+              <span class="divider"></span>
+            </div>
+          {/block:SearchPage}
+
+          <!-- Tag View -->
+          {block:TagPage}
+          <div class="tag-page message">
+            <p class="tag-wrapper">{lang:Showing posts tagged Tag 2}</p>
+            <span class="divider"></span>
+          </div>
+          {/block:TagPage}
+
+          <!-- Primary Post View -->
+          <main role="main">
+            {block:Posts}
+            <article class="panel panel-default">
+              <div class="panel-body">
+                <!-- Text Posts-->
+                {block:Text}
+                  <div class="type-text post-content">
+                    {block:Title}
+                      <h2 class="title">
+                        <a href="{Permalink}">{Title}</a>
+                      </h2>
+                    {/block:Title}
+
+                    {Body}
+                  </div>
+                {/block:Text}
+
+                <!-- Photo Posts-->
+                {block:Photo}
+                <figure class="type-photo post-content">
+                  {LinkOpenTag}<img src="{PhotoURL-HighRes}" class="center-block" alt="{PhotoAlt}" />{LinkCloseTag}
+
+                  {block:Caption}
+                    <figcaption class="caption">
+                      {Caption}
+                    </figcaption>
+                  {/block:Caption}
+                </figure>
+                {/block:Photo}
+
+                <!-- Photosets -->
+                {block:Photoset}
+                  <figure class="type-photoset post-content">
+                    {Photoset}
+
+                    {block:Caption}
+                      <figcaption class="caption">
+                        {Caption}
+                      </figcaption>
+                    {/block:Caption}
+                  </figure>
+                {/block:Photoset}
+
+                <!-- Quote Posts -->
+                {block:Quote}
+                <div class="type-quote post-content">
+                  <blockquote>{Quote}</blockquote>
+
+                  {block:Source}
+                    <cite class="caption">
+                      {Source}
+                    </cite>
+                  {/block:Source}
+                </div>
+                {/block:Quote}
+
+                <!-- Link Posts -->
+                {block:Link}
+                <div class="type-link post-content">
+                  <a {Target} href="{URL}" class="link-name">{Name}</a>
+
+                  {block:Description}
+                    <div class="caption">
+                      {Description}
+                    </div>
+                  {/block:Description}
+                </div>
+                {/block:Link}
+
+                <!-- Chat Posts-->
+                {block:Chat}
+                <div class="type-chat post-content">
+                  <ul class="chat-lines">
+                    {block:Lines}
+                      <li>
+                        {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
+                      </li>
+                    {/block:Lines}
+                  </ul>
+                </div>
+                {/block:Chat}
+
+                <!-- Audio Posts-->
+                {block:Audio}
+                <div class="type-audio post-content">
+                  <div class="embed-responsive embed-responsive-16by9"> <!-- Bootstrap Responsive Embed Class -->
+                    {block:AudioEmbed}
+                        {AudioEmbed color="white"}
+                    {/block:AudioEmbed}
+                  </div>
+
+                  {block:Caption}
+                    <div class="caption">
+                      {Caption}
+                    </div>
+                  {/block:Caption}
+                </div>
+                {/block:Audio}
+
+                <!-- Video Posts -->
+                {block:Video}
+                <div class="type-video post-content">
+                  <div class="embed-responsive embed-responsive-16by9"> <!-- Bootstrap Responsive Embed Class -->
+                    {Video-700}
+                  </div>
+
+                  {block:Caption}
+                    <div class="caption">
+                      {Caption}
+                    </div>
+                  {/block:Caption}
+                </div>
+                {/block:Video}
+
+                <!-- Question and Answer Posts -->
+                {block:Answer}
+                <div class="type-answer post-content">
+                  <div class="question">
+                    <p class="asker">
+                      <span class="user-name">{Asker}</span>{block:English} asked{/block:English}:
+                    </p>
+
+                    <h2 class="title">{Question}</h2>
+                  </div>
+
+                  {block:Answerer}
+                    <div class="answer">
+                        <p class="answerer">
+                          <span class="user-name">{Answerer}</span>{block:English} answered{/block:English}:
+                        </p>
+
+                        <div class="caption">
+                            {Answer}
+                        </div>
+                    </div>
+                  {/block:Answerer}
+
+                  <div class="replies">
+                    {Replies}
+                  </div>
+                </div>
+                {/block:Answer}
+              </div> <!-- ./panel-body -->
+
+              <!-- Post Footer -->
+              {block:Date}
+              <footer class="contentinfo panel-footer" role="contentinfo">
+                <!-- Timestamps and Reblog Button Share Same Line -->
+                <div class="timestamp-reblog">
+                  <span class="text-left">
+                    <a href="{Permalink}" title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} {Year}">{TimeAgo}</a>
+                  </span>
+
+                  <!-- Custom Font Awesome Reblog Button-->
+                  <span class="pull-right">
+                    <a href="{ReblogURL}" class="btn btn-default btn-xs"><span class="fa fa-retweet" aria-hidden="true"></span></a>
+                  </span>
+
+
+                </div>
+
+                <!-- Reblog Source and Note Count-->
+                <!-- These do not always appear -->
+                <div class="source-note">
+                  {block:RebloggedFrom}
+                    <span class="text-left">
+                      {lang:Originally from ReblogRootName 2}
+                    </span>
+                  {/block:RebloggedFrom}
+
+                  {block:NoteCount}
+                    <span class="pull-right">
+                      <a class="note-count" href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                    </span>
+                  {/block:NoteCount}
+                </div>
+
+                <!-- Tag Listing. Also does not always appear -->
+                {block:HasTags}
+                  <hr>
+                  <ul class="tags list-inline">
+                    {block:Tags}<li><a href="{TagURL}">#{Tag}</a> </li>{/block:Tags}
+                  </ul>
+                {/block:HasTags}
+
+                <!-- PermalinkPage content only rended on single post view. -->
+                {block:PermalinkPage}
+                  <!-- Post Note do not always appear -->
+                  {block:PostNotes}
+                    <hr>
+                    <div class="post-notes">
+                      {PostNotes}
+                    </div>
+                  {/block:PostNotes}
+                {/block:PermalinkPage}
+              </footer>
+              {/block:Date}
+            </article>
+            {/block:Posts}
+          </main>
+        </div> <!-- ./col-md-8 -->
+      </div> <!-- ./row -->
+    </div> <!-- ./container -->
+
+    <!-- Standard Bootstrap Pagenation -->
+    <!-- Uses Tumblr classes to determine if pages exist and buttons should be rendered -->
+    {block:Pagination}
+    <nav class="text-center">
+      <ul class="pagination">
+
+        {block:PreviousPage}
+          <li>
+            <a href="{PreviousPage}">Previous</a>
+          </li>
+        {/block:PreviousPage}
+
+        {block:JumpPagination length="5"}
+          {block:CurrentPage}
+            <li class="disabled">
+              <span class="current_page">{PageNumber}</span>
+            </li>
+          {/block:CurrentPage}
+
+          {block:JumpPage}
+            <li>
+              <a class="jump_page" href="{URL}">{PageNumber}</a>
+            </li>
+          {/block:JumpPage}
+        {/block:JumpPagination}
+
+        {block:NextPage}
+          <li>
+            <a href="{NextPage}">Next</a>
+          </li>
+        {/block:NextPage}
+      </ul>
+    </nav>
+    {/block:Pagination}
+
+    <!-- Sticky Footer-->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">{Title} powered by <a href="">Wallace, a Bootstrap Tumblr Theme.</a></p>
+      </div>
+    </footer>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap Javascript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  </body>
+</html>

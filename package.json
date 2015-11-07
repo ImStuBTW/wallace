@@ -1,0 +1,30 @@
+{
+  "name": "wallace",
+  "version": "1.0.0",
+  "description": "A Bootstrap Theme for Tumblr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/imstuartjones/wallace.git"
+  },
+  "keywords": [
+    "Bootstrap",
+    "Tumblr",
+    "Theme"
+  ],
+  "author": "Stuart Jones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imstuartjones/wallace/issues"
+  },
+  "homepage": "https://github.com/imstuartjones/wallace#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0",
+    "load-grunt-tasks": "^3.3.0"
+  }
+}

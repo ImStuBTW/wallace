@@ -1,0 +1,30 @@
+{
+  "name": "wallace",
+  "description": "A Bootstrap Theme for Tumblr",
+  "main": "index.js",
+  "authors": [
+    "Stuart Jones"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Bootstrap",
+    "Tumblr",
+    "Theme"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "http://stuart-jones.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
+}
