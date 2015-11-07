@@ -1,5 +1,7 @@
 # Wallace, A Bootstrap Tumblr Theme
 
+![Wallace Preview](ScreenShot.png)
+
 ## tl;dr
 
 Take the index.html file in the /dist folder and upload it to the “Edit Theme” section of Tumblr. That’s it. You’re done.
