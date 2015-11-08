@@ -31,3 +31,7 @@ Finally, all you need to do is run the Gruntfile.js. Grunt will take the ./sass/
 `grunt`
 
 styles.*scss* already has a @import command for the \_bootstrap.scss file that Bower fetched. styles.*css* is the only stylesheet your Tumblr theme will need. Go to the “Edit Appearance” section of Tumblr, then click “Edit Theme”. Click “Edit HTML”, then copy and paste Wallace’s Index.html file into the window. Click the gear in the top left corner and then click “Theme Assets”. Upload your compiled style.css file here. Find the section on line 164 that reads “[REPLACE WITH TUMBLR UPLOADED CSS FILE]”. Highlight this text, then slick the “Insert” link next to the styles.css file you uploaded. Click “Update Preview”, and then “Save” at the top of the coding pane. Wallace should now be successfully applied to your Tumblr blog.
+
+## License
+
+Wallace is licensed under The MIT License (MIT). It is based in part on the excellent [Build Themes](http://buildthemes.tumblr.com) ebook by Rohan Chandra.
