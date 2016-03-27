@@ -120,6 +120,9 @@
       }
 
       /* Note Stylings. */
+      .note-count {
+        padding-right: 5px;
+      }
       ol.notes {
           padding: 0px;
           margin: 25px 0px;
@@ -176,7 +179,8 @@
         font-family: {font:Title};
       }
 
-      body {
+      /* Allows user control of body text.*/
+      /*body {
         color: {color:Body text};
       }
       .masthead {
@@ -184,7 +188,7 @@
       }
       .masthead a {
         color: {color:Masthead text and links};
-      }
+      }*/
 
       body {
         background-image: url('{image:Background}');
@@ -249,6 +253,7 @@
             </form>
 
             <div class="masthead-links nav-wrapper">
+              <nav>
                 {block:AskEnabled}
                   <a class="btn btn-default" href="/ask">{AskLabel}</a>
                 {/block:AskEnabled}
@@ -445,24 +450,18 @@
                   <span class="text-left">
                     <a href="{Permalink}" title="{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} {Year}">{TimeAgo}</a>
                   </span>
-
-                  <!-- Custom Font Awesome Reblog Button-->
-                  <span class="pull-right">
-                    <a href="{ReblogURL}" class="btn btn-default btn-xs"><span class="fa fa-retweet" aria-hidden="true"></span></a>
-                  </span>
-
-
-                </div>
-
-                <!-- Reblog Source and Note Count-->
-                <!-- These do not always appear -->
-                <div class="source-note">
+                  <!-- Reblog count does not always appear -->
                   {block:RebloggedFrom}
                     <span class="text-left">
                       {lang:Originally from ReblogRootName 2}
                     </span>
                   {/block:RebloggedFrom}
 
+                  <!-- Custom Font Awesome Reblog Button-->
+                  <span class="pull-right">
+                    <a href="{ReblogURL}" class="btn btn-default btn-xs"><span class="fa fa-retweet" aria-hidden="true"></span></a>
+                  </span>
+                  <!-- Note count does not always appear -->
                   {block:NoteCount}
                     <span class="pull-right">
                       <a class="note-count" href="{Permalink}#notes">{NoteCountWithLabel}</a>
